@@ -4,7 +4,8 @@
   :license {:name "EPL-2.0 OR GPL-2.0-or-later WITH Classpath-exception-2.0"
             :url  "https://www.eclipse.org/legal/epl-2.0/"}
   :dependencies [[org.clojure/clojure "1.10.0"]
-                 [clj-antlr "0.2.5"]]
+                 [clj-antlr "0.2.5"]
+                 [org.craigandera/dynne "0.4.1"]]
   :plugins [[lein-antlr "0.3.0"]]
   :repl-options {:init-ns music-storm-clj.core}
 
