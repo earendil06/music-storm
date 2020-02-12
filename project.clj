@@ -5,7 +5,8 @@
             :url  "https://www.eclipse.org/legal/epl-2.0/"}
   :dependencies [[org.clojure/clojure "1.10.0"]
                  [clj-antlr "0.2.5"]
-                 [org.craigandera/dynne "0.4.1"]]
+                 [org.craigandera/dynne "0.4.1"]
+                 [org.clojure/core.async "0.7.559"]]
   :plugins [[lein-antlr "0.3.0"]]
   :repl-options {:init-ns music-storm-clj.core}
 

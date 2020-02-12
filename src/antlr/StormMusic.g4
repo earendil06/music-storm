@@ -1,16 +1,18 @@
 grammar StormMusic;
 
-music: title NEWLINE+ author NEWLINE+ /*key NEWLINE+ armor NEWLINE+*/ melody;
+music: (expr NEWLINE)* ;
 
-title: 'title' SPACE+ TEXT;
-author: 'author' SPACE+ TEXT;
-//key: 'key' SPACE+ TEXT;
-//armor: 'armor' SPACE+ (NOTE SPACE*)*;
-melody: 'melody' NEWLINE+ (NOTE | (SPACE+))+;
+expr: (title | author | key | tempo | melody);
 
+title: 'title' SPACE (TEXT | SPACE)+;
+author: 'author' SPACE (TEXT | SPACE)+;
+key: 'key' SPACE keyChoice;
+tempo: 'tempo' SPACE INT;
+melody: 'melody' SPACE (NOTE | SPACE)+;
+keyChoice: ('FA' | 'SOL');
 
-NEWLINE: ('\r'? '\n' | '\r') ;
-SPACE: ' ';
-NOTE: [a-g];
+NEWLINE: [\r\n]+ ;
+SPACE: ' '+;
+NOTE: '-'?[1-4][a-gA-G][0-9];
 TEXT: [a-zA-Z_-]+;
-//KEY: ('SOL' | 'FA');
+INT: [0-9]+;
